@@ -10,61 +10,54 @@
     <title>User-Data</title>
 </head>
 <body>
-    <header class="container-fluid row">
+    <header class="container-fluid">
         <ul class="d-flex justify-content-center nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
               <button class="nav-link active" id="pills-form-tab" data-bs-toggle="pill" data-bs-target="#pills-form" type="button" role="tab" aria-controls="pills-form" aria-selected="true">Form</button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="pills-card-tab" data-bs-toggle="pill" data-bs-target="#pills-card" type="button" role="tab" aria-controls="pills-card" aria-selected="false">Cards</button>
-              </li>
+            </li>
         </ul>
     </header>
 
     <main>
-        <div class="tabs-content pills-tabContent">
+        <div class="tabs-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-form" role="tabpanel" aria-labelledby="pills-form-tab">
                 <form class="container-fluid d-flex flex-column align-items-center g-3 needs-validation" novalidate>
-                    <div class="w-25 mb-3">
-                      <label for="firstname" class="form-label">First name:</label>
-                      <input type="text" class="form-control" id="firstname" required>
+
+                    <!-- First Name -->
+                    <div class="w-25 mt-3">
+                      <label for="fname" class="form-label">First name</label>
+                      <input type="text" class="form-control" id="fname" required>
                       <div class="valid-feedback">
                         Looks good!
                       </div>
                     </div>
-                    <div class="w-25 mb-3">
-                      <label for="lastname" class="form-label">Last name</label>
-                      <input type="text" class="form-control" id="lastname" required>
+
+                    <!-- Last Name -->
+                    <div class="w-25 mt-3">
+                      <label for="lname" class="form-label">Last name</label>
+                      <input type="text" class="form-control" id="lname" required>
                       <div class="valid-feedback">
                         Looks good!
                       </div>
                     </div>
-                    <div class="w-25">
-                      <label for="validationCustomUsername" class="form-label">Date Of Birth</label>
+
+                    <!-- Date of Birth -->
+                    <div class="w-25 mt-3">
+                      <label for="dateBirth" class="form-label">Date Of Birth</label>
                       <div class="input-group has-validation">
-                        <input type="date" class="form-control" min=" 2004-01-01" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                        <input type="date" class="form-control" id="dateBirth" aria-describedby="inputGroupPrepend" required>
                         <div class="invalid-feedback">
                           Please enter the correct date of birth.
                         </div>
                       </div>
                     </div>
-                    <div class="form-check w-25 mt-4">
-                        Gender:
-                        <div>
-                            <input class="form-check-input" type="radio" id="male">
-                            <label class="form-check-label" for="male">
-                          Male
-                        </label>
-                        </div>
-                        <div>
-                            <input class="form-check-input" type="radio" id="female">
-                            <label class="form-check-label" for="female">
-                          female
-                        </label>
-                        </div>
-                      </div>
-                    <div class="w-25 mt-4">
-                      <label for="validationCustom04" class="form-label">State:</label>
+
+                      <!-- States -->
+                    <div class="w-25 mt-3">
+                      <label for="validationCustom04" class="form-label">State</label>
                       <select class="form-select" id="validationCustom04" required>
                         <option selected disabled value="">Choose...</option>
                         <option>...</option>
@@ -73,8 +66,10 @@
                         Please select a valid state.
                       </div>
                     </div>
-                    <div class="w-25 mt-4">
-                        <label for="validationCustom04" class="form-label">LGA:</label>
+
+                    <!-- L.G.A -->
+                    <div class="w-25 mt-3">
+                        <label for="validationCustom04" class="form-label">LGA</label>
                         <select class="form-select" id="validationCustom04" required>
                           <option selected disabled value="">Choose...</option>
                           <option>...</option>
@@ -83,23 +78,49 @@
                           Please select a valid state.
                         </div>
                       </div>
-                    <div class="w-25 mt-4">
+
+                    <!-- Gender -->
+                    <div class="mt-3">
+                        Gender:
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                              Male
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                              Female
+                            </label>
+                          </div>
+                    </div>
+
+                      <!-- Submit button -->
+                    <div class="w-25 mt-3">
                       <button class="btn btn-primary" type="submit">Submit form</button>
                     </div>
                   </form>
             </div>
-        <div class="tab-pane fade d-flex flex-column flex-md-row flex-wrap justify-content-center align-items-center gap-5" id="pills-card" role="tabpanel" aria-labelledby="pills-card-tab">
-            <div class="card w-50">
-                <div class="card-body">
-                    <h5 class="card-title mb-3">Full Name:</h5>
-                    <h6 class="card-subtitle mb-3">Date Of Birth:</h6>
-                    <p class="card-text">State:</p>
-                    <p class="card-text">LGA:</p>
-                    <p class="card-text">Gender:</p>
+
+
+            <!-- Cards -->
+        <div class="tab-pane fade" id="pills-card" role="tabpanel" aria-labelledby="pills-card-tab">
+            <div class="d-flex flex-column flex-md-row flex-wrap justify-content-center align-items-center">
+                <div class="card w-50">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3">Full Name:</h5>
+                        <h6 class="card-subtitle mb-3">Date Of Birth:</h6>
+                        <p class="card-text">State:</p>
+                        <p class="card-text">LGA:</p>
+                        <p class="card-text">Gender:</p>
+                    </div>
                 </div>
             </div>
         </div>
         </div>
     </main>
+
+    <script src="./script/main.js"></script>
 </body>
 </html>
