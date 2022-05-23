@@ -29,34 +29,34 @@
     <main>
         <div class="tabs-content pills-tabContent">
             <div class="tab-pane fade show active d-flex flex-column flex-md-row flex-wrap justify-content-center align-items-center gap-5" id="pills-form" role="tabpanel" aria-labelledby="pills-form-tab">
-                <form class="container-fluid row g-3 needs-validation" novalidate>
+                <form class="container-fluid row g-3 needs-validation" method="get" id="addForm" novalidate>
                     <div class="col-md-6">
-                      <label for="validationCustom01" class="form-label">First name</label>
-                      <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+                      <label for="firstName" class="form-label">First name</label>
+                      <input type="text" class="form-control" id="firstName" required>
                       <div class="valid-feedback">
                         Looks good!
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <label for="validationCustom02" class="form-label">Last name</label>
-                      <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+                      <label for="lastName" class="form-label">Last name</label>
+                      <input type="text" class="form-control" id="lastName" required>
                       <div class="valid-feedback">
                         Looks good!
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <label for="validationCustomUsername" class="form-label">Date Of Birth</label>
+                      <label for="DoB" class="form-label">Date Of Birth</label>
                       <div class="input-group has-validation">
-                        <input type="date" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                        <input type="date" class="form-control" id="DoB" aria-describedby="inputGroupPrepend" required>
                         <div class="invalid-feedback">
-                          Please choose a username.
+                          Please choose a date
                         </div>
                       </div>
                     </div>
                     <div class="col-md-6">
-                      <label for="validationCustom04" class="form-label">State</label>
-                      <select class="form-select" id="validationCustom04" required>
-                        <option selected disabled value="">Choose...</option>
+                      <label for="state" class="form-label">State</label>
+                      <select class="form-select" id="state" required>
+                        <option selected disabled value="">Choose your State...</option>
                         <option>...</option>
                       </select>
                       <div class="invalid-feedback">
@@ -64,21 +64,23 @@
                       </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="validationCustom04" class="form-label">LGA</label>
-                        <select class="form-select" id="validationCustom04" required>
-                          <option selected disabled value="">Choose...</option>
+                        <label for="LGA" class="form-label">LGA</label>
+                        <select class="form-select" id="LGA" required>
+                          <option selected disabled value="">Choose your LGA</option>
                           <option>...</option>
                         </select>
                         <div class="invalid-feedback">
-                          Please select a valid state.
+                          Please select a valid LGA.
                         </div>
                       </div>
                     <div class="col-12">
-                      <button class="btn btn-primary" type="submit">Submit form</button>
+                      <button class="btn btn-primary" onclick="addCard()" type="submit">Submit form</button>
                     </div>
                   </form>
             </div>
         </div>
+
+
         <div class="tabs-content pills-tabContent">
             <div class="tab-pane fade show active d-flex flex-column flex-md-row flex-wrap justify-content-center align-items-center gap-5" id="pills-card" role="tabpanel" aria-labelledby="pills-card-tab">
                 <div class="card w-50">
