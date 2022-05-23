@@ -845,15 +845,9 @@ let states = [
       ]
     }
   ]
-  
-var card = []
-function addImage(){
-var firstName = document.getElementById("firstName").value
-var lastName = document.getElementById("lastName").value 
-var dob = document.getElementById("dob").value 
-  
-let theState = document.getElementById('state')
+  let theState = document.getElementById('state')
 let localArea = document.getElementById('LGA')
+
 for(let i = 0;i < Object.keys(states[0]).length;i++){
     let s = document.createElement('option')
     s.innerText = Object.keys(states[0])[i]
@@ -869,6 +863,11 @@ theState.addEventListener('change',()=>{
     }
     
 })
+var card = []
+function addImage(){
+var firstName = document.getElementById("firstName").value
+var lastName = document.getElementById("lastName").value 
+var dob = document.getElementById("dob").value 
 
 card = {firstName,lastName,dob}
 
