@@ -10,24 +10,24 @@
     <title>User-Data</title>
 </head>
 <body>
-    <header class="container-fluid row">
-        <ul class="col-12 col-md-6 d-flex justify-content-end nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <header class="container-fluid">
+        <ul class="d-flex justify-content-center nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
               <button class="nav-link active" id="pills-form-tab" data-bs-toggle="pill" data-bs-target="#pills-form" type="button" role="tab" aria-controls="pills-form" aria-selected="true">Form</button>
             </li>
             <li class="nav-item" role="presentation">
                 <button class="nav-link" id="pills-card-tab" data-bs-toggle="pill" data-bs-target="#pills-card" type="button" role="tab" aria-controls="pills-card" aria-selected="false">Cards</button>
-              </li>
+            </li>
         </ul>
     </header>
 
     <main>
-        <div class="tabs-content pills-tabContent">
+        <div class="tabs-content" id="pills-tabContent">
             <div class="tab-pane fade show active" id="pills-form" role="tabpanel" aria-labelledby="pills-form-tab">
-                <form class="container-fluid row g-3">
+                <form method="POST" id="addForm" class="container-fluid d-flex flex-column align-items-center g-3 needs-validation" >
 
                     <!-- First Name -->
-                    <div class="col-md-6">
+                    <div class="w-25 mt-3">
                       <label for="fname" class="form-label">First name</label>
                       <input type="text" class="form-control" id="fname" required>
                       <div class="valid-feedback">
@@ -36,7 +36,7 @@
                     </div>
 
                     <!-- Last Name -->
-                    <div class="col-md-6">
+                    <div class="w-25 mt-3">
                       <label for="lname" class="form-label">Last name</label>
                       <input type="text" class="form-control" id="lname" required>
                       <div class="valid-feedback">
@@ -45,10 +45,10 @@
                     </div>
 
                     <!-- Date of Birth -->
-                    <div class="col-md-6">
+                    <div class="w-25 mt-3">
                       <label for="dateBirth" class="form-label">Date Of Birth</label>
                       <div class="input-group has-validation">
-                        <input type="date" class="form-control" id="dateBirth" aria-describedby="inputGroupPrepend" required>
+                        <input type="date" class="form-control" id="dateBirth" min="2004-01-01" aria-describedby="inputGroupPrepend" required>
                         <div class="invalid-feedback">
                           Please enter the correct date of birth.
                         </div>
@@ -56,9 +56,9 @@
                     </div>
 
                       <!-- States -->
-                    <div class="col-md-6">
-                      <label for="validationCustom04" class="form-label">State</label>
-                      <select class="form-select" id="validationCustom04" required>
+                    <div class="w-25 mt-3">
+                      <label for="state" class="form-label">State</label>
+                      <select class="form-select" id="state" required>
                         <option selected disabled value="">Choose...</option>
                         <option>...</option>
                       </select>
@@ -68,9 +68,9 @@
                     </div>
 
                     <!-- L.G.A -->
-                    <div class="col-md-6">
-                        <label for="validationCustom04" class="form-label">LGA</label>
-                        <select class="form-select" id="validationCustom04" required>
+                    <div class="w-25 mt-3">
+                        <label for="LGA" class="form-label">LGA</label>
+                        <select class="form-select" id="LGA" required>
                           <option selected disabled value="">Choose...</option>
                           <option>...</option>
                         </select>
@@ -79,22 +79,25 @@
                         </div>
                       </div>
 
-                                                              <!-- Gender -->
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                          Male
-                        </label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                          Female
-                        </label>
-                      </div>
+                    <!-- Gender -->
+                    <div class="mt-3">
+                        Gender:
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                              Male
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                              Female
+                            </label>
+                          </div>
+                    </div>
 
                       <!-- Submit button -->
-                    <div class="col-12">
+                    <div class="w-25 mt-3">
                       <button class="btn btn-primary" onclick="addCard()" type="submit">Submit form</button>
                     </div>
                   </form>
@@ -102,14 +105,16 @@
 
 
             <!-- Cards -->
-        <div class="tab-pane fade d-flex flex-column flex-md-row flex-wrap justify-content-center align-items-center gap-5" id="pills-card" role="tabpanel" aria-labelledby="pills-card-tab">
-            <div class="card w-50">
-                <div class="card-body">
-                    <h5 class="card-title mb-3">Full Name:</h5>
-                    <h6 class="card-subtitle mb-3">Date Of Birth:</h6>
-                    <p class="card-text">State:</p>
-                    <p class="card-text">LGA:</p>
-                    <p class="card-text">Gender:</p>
+        <div class="tab-pane fade" id="pills-card" role="tabpanel" aria-labelledby="pills-card">
+            <div class="d-flex flex-column flex-md-row flex-wrap justify-content-center align-items-center">
+                <div class="card w-50">
+                    <div class="card-body" id="Card">
+                        <h5 class="card-title mb-3">Full Name:</h5>
+                        <h6 class="card-subtitle mb-3">Date Of Birth:</h6>
+                        <p class="card-text">State:</p>
+                        <p class="card-text">LGA:</p>
+                        <p class="card-text">Gender:</p>
+                    </div>
                 </div>
             </div>
         </div>
