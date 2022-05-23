@@ -1,3 +1,4 @@
+// States and LGA
 let states = [
   {
     Abia: [
@@ -863,23 +864,26 @@ theState.addEventListener("change", () => {
   }
 });
 
+
+// Function to add cards on user input
 function addCard(e) {
   e.preventDefault();
-  var firstName = document.getElementById("fname").value;
-  var lastName = document.getElementById("lname").value;
-  var dob = document.getElementById("dateBirth").value;
-  var state = document.getElementById("state").value;
-  var lga = document.getElementById("LGA").value;
-  // var gender = document.getElementById("")
+  let firstName = document.getElementById("fname").value;
+  let lastName = document.getElementById("lname").value;
+  let dob = document.getElementById("dateBirth").value;
+  let state = document.getElementById("state").value;
+  let lga = document.getElementById("LGA").value;
+  let gender = document.querySelector('input[type=radio][name=gender]:checked').value;
+  
 
-
-  var cardTemplate =
-        `<div class="card w-50">
+  let cardTemplate =
+        `<div class="card mx-3 my-3 col-4">
             <div class="card-body">
-                <h5 class="card-title">Full name: ${firstName} ${lastName}</h5>
-                <p class="card-text">${dob}</p>
-                <p class="card-text">State: ${state}</p>
-                <p class="card-text">LGA: ${lga}</p>
+                <h5 class="card-title text-primary ">Full name: <span class="text-dark">${lastName} ${firstName} </span></h5>
+                <p class="card-text fw-bold text-primary ">Date of Birth: <span class="text-dark">${dob} </span> </p>
+                <p class="card-text fw-bold text-primary ">State: <span class="text-dark">${state} </span> </p>
+                <p class="card-text fw-bold text-primary ">LGA: <span class="text-dark">${lga} </span> </p>
+                <p class="card-text fw-bold text-primary ">Gender: <span class="text-dark">${gender} </span> </p>
             </div>
         </div>`;
 
@@ -887,3 +891,29 @@ function addCard(e) {
 }
 
 addForm.addEventListener("submit", addCard);
+
+
+// Tab contents to show
+let tabs = document.querySelectorAll('[data-tab-value]')
+let tabInfos = document.querySelectorAll('[data-tab-info]')
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        let target = document.querySelector(tab.dataset.tabValue);
+
+        tabInfos.forEach(tabInfo => {
+            tabInfo.style.display = 'none'
+        })
+        target.style.display = "block";
+    })
+})
+
+function displayRadioValue() {
+    var ele = document.getElementsByName('gender');
+      
+    for(i = 0; i < ele.length; i++) {
+        if(ele[i].checked)
+        document.getElementById("result").innerHTML
+                = "Gender: "+ele[i].value;
+    }
+}
