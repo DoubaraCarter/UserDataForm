@@ -26,44 +26,37 @@
         <div class="tabs-content pills-tabContent">
             <div class="tab-pane fade show active" id="pills-form" role="tabpanel" aria-labelledby="pills-form-tab">
                 <form class="container-fluid row g-3 needs-validation" novalidate>
+
+                    <!-- First Name -->
                     <div class="col-md-6">
-                      <label for="validationCustom01" class="form-label">First name</label>
-                      <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+                      <label for="fname" class="form-label">First name</label>
+                      <input type="text" class="form-control" id="fname" required>
                       <div class="valid-feedback">
                         Looks good!
                       </div>
                     </div>
+
+                    <!-- Last Name -->
                     <div class="col-md-6">
-                      <label for="validationCustom02" class="form-label">Last name</label>
-                      <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+                      <label for="lname" class="form-label">Last name</label>
+                      <input type="text" class="form-control" id="lname" required>
                       <div class="valid-feedback">
                         Looks good!
                       </div>
                     </div>
+
+                    <!-- Date of Birth -->
                     <div class="col-md-6">
-                      <label for="validationCustomUsername" class="form-label">Date Of Birth</label>
+                      <label for="dateBirth" class="form-label">Date Of Birth</label>
                       <div class="input-group has-validation">
-                        <input type="date" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                        <input type="date" class="form-control" id="dateBirth" aria-describedby="inputGroupPrepend" required>
                         <div class="invalid-feedback">
                           Please enter the correct date of birth.
                         </div>
                       </div>
                     </div>
-                    <div class="form-check col-md-6">
-                        Gender:
-                        <div>
-                            <input class="form-check-input" type="radio" id="male">
-                            <label class="form-check-label" for="male">
-                          Male
-                        </label>
-                        </div>
-                        <div>
-                            <input class="form-check-input" type="radio" id="female">
-                            <label class="form-check-label" for="female">
-                          female
-                        </label>
-                        </div>
-                      </div>
+
+                      <!-- States -->
                     <div class="col-md-6">
                       <label for="validationCustom04" class="form-label">State</label>
                       <select class="form-select" id="validationCustom04" required>
@@ -74,6 +67,8 @@
                         Please select a valid state.
                       </div>
                     </div>
+
+                    <!-- L.G.A -->
                     <div class="col-md-6">
                         <label for="validationCustom04" class="form-label">LGA</label>
                         <select class="form-select" id="validationCustom04" required>
@@ -84,11 +79,30 @@
                           Please select a valid state.
                         </div>
                       </div>
+
+                                                              <!-- Gender -->
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                          Male
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                          Female
+                        </label>
+                      </div>
+
+                      <!-- Submit button -->
                     <div class="col-12">
                       <button class="btn btn-primary" type="submit">Submit form</button>
                     </div>
                   </form>
             </div>
+
+
+            <!-- Cards -->
         <div class="tab-pane fade d-flex flex-column flex-md-row flex-wrap justify-content-center align-items-center gap-5" id="pills-card" role="tabpanel" aria-labelledby="pills-card-tab">
             <div class="card w-50">
                 <div class="card-body">
@@ -102,5 +116,7 @@
         </div>
         </div>
     </main>
+
+    <script src="./script/main.js"></script>
 </body>
 </html>
