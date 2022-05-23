@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <title></title>
+  </head>
+  <body>
+    <div class="container  vh-100  d-flex justify-content-center align-content-center ">
+      <div class="row align-content-center justify-content-center ">
+          <form
+            class="w-100 col-12 g-3 needs-validation d-flex justify-content-center flex-column border mx-auto"
+            novalidate
+          >
+            <div class="p-2">
+              <label for="validationTooltip01" class="form-label"
+                >First name</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="validationTooltip01"
+                value="FirstName"
+                required
+              />
+              <div class="valid-tooltip">Looks good!</div>
+            </div>
+            <div class="p-2">
+              <label for="validationTooltip02" class="form-label"
+                >Last name</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="validationTooltip02"
+                value="Lastname"
+                required
+              />
+              <div class="valid-tooltip">Looks good!</div>
+            </div>
+            <div class="p-2">
+              <label for="validationTooltipUsername" class="form-label"
+                >Date Of Birth</label
+              >
+              <div class="input-group has-validation">
+                <span
+                  class="input-group-text"
+                  id="validationTooltipUsernamePrepend"
+                ></span>
+                <input
+                  type="date"
+                  class="form-control"
+                  id="validationTooltipUsername"
+                  aria-describedby="validationTooltipUsernamePrepend"
+                  required
+                />
+                <div class="invalid-tooltip">
+                  Please choose a unique and valid username.
+                </div>
+              </div>
+            </div>
+
+            <div class="p-2">
+              <label for="validationTooltip04" class="form-label">State</label>
+              <select class="form-select" id="validationTooltip04" required>
+                <option selected disabled value="">Choose...</option>
+                <option>...</option>
+              </select>
+              <div class="invalid-tooltip">Please select a valid state.</div>
+              <div class="p-2">
+                <label for="validationTooltip03" class="form-label">City</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="validationTooltip03"
+                  required
+                />
+                <div class="invalid-tooltip">Please provide a valid city.</div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <button class="btn btn-primary" type="submit">Submit form</button>
+            </div>
+          </form>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
