@@ -6,103 +6,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles/style.css">
     <title>User-Data</title>
 </head>
 <body>
-    <header class="container-fluid row">
-        <ul class="col-12 col-md-6 d-flex justify-content-end nav nav-pills mb-3" id="pills-tab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="pills-form-tab" data-bs-toggle="pill" data-bs-target="#pills-form" type="button" role="tab" aria-controls="pills-form" aria-selected="true">Form</button>
+    <header class="container-fluid border-bottom">
+        <ul class="d-flex justify-content-center nav nav-pills mb-3" id="pills-tab" role="tablist">
+
+            <li class="nav-item nav-fill" role="presentation">
+              <button class="nav-link active px-5 mt-3 mx-3" id="pills-form-tab" data-bs-toggle="pill" data-bs-target="#pills-form" type="button" role="tab" aria-controls="pills-form" aria-selected="true" data-tab-value="#pills-form">Form</button>
             </li>
 
+            <li class="nav-item nav-fill" role="presentation">
+                <button class="nav-link px-5 mt-3" id="pills-card-tab" data-bs-toggle="pill" data-bs-target="#pills-card" type="button" role="tab" aria-controls="pills-card" aria-selected="false" data-tab-value="#pills-card">User Details</button>
+            </li>
 
-            <li class="nav-item" role="presentation">
-                <button class="nav-link" id="pills-card-tab" data-bs-toggle="pill" data-bs-target="#pills-card" type="button" role="tab" aria-controls="pills-card" aria-selected="false">Cards</button>
-              </li>
         </ul>
     </header>
 
     <main>
-        <div class="tabs-content pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-form" role="tabpanel" aria-labelledby="pills-form-tab">
-                <form class="container-fluid row g-3 needs-validation" novalidate>
-                    <div class="col-md-6">
-                      <label for="firstName" class="form-label">First name</label>
-                      <input type="text" class="form-control" id="firstName" required>
+        <div class="tabs-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-form" role="tabpanel" aria-labelledby="pills-form-tab" data-tab-info>
+              <form  id="addForm" class="container-fluid d-flex flex-column bg-light align-items-center g-3 needs-validation" >
+
+                                                 <!-- First Name -->
+                    <div class="w-25 mt-3">
+                      <label for="fname" class="form-label">First name</label>
+                      <input type="text" class="form-control" id="fname" required>
                       <div class="valid-feedback">
                         Looks good!
                       </div>
                     </div>
-                    <div class="col-md-6">
-                      <label for="lastName" class="form-label">Last name</label>
-                      <input type="text" class="form-control" id="lastName" required>
+
+                                                  <!-- Last Name -->
+                    <div class="w-25 mt-3">
+                      <label for="lname" class="form-label">Last name</label>
+                      <input type="text" class="form-control" id="lname" required>
                       <div class="valid-feedback">
                         Looks good!
                       </div>
                     </div>
-                    <div class="col-md-6">
-                      <label for="DoB" class="form-label">Date Of Birth</label>
+
+                                                <!-- Date of Birth -->
+                    <div class="w-25 mt-3">
+                      <label for="dateBirth" class="form-label">Date Of Birth</label>
                       <div class="input-group has-validation">
-                        <input type="date" class="form-control" id="DoB" aria-describedby="inputGroupPrepend" required>
+                        <input type="date" class="form-control" id="dateBirth" max="2004-12-12" aria-describedby="inputGroupPrepend" required>
                         <div class="invalid-feedback">
                           Please enter the correct date of birth.
                         </div>
                       </div>
                     </div>
-                    <div class="form-check col-md-6">
-                        Gender:
-                        <div>
-                            <input class="form-check-input" type="radio" id="male">
-                            <label class="form-check-label" for="male">
-                          Male
-                        </label>
-                        </div>
-                        <div>
-                            <input class="form-check-input" type="radio" id="female">
-                            <label class="form-check-label" for="female">
-                          female
-                        </label>
-                        </div>
-                      </div>
-                    <div class="col-md-6">
+
+                                                    <!-- States -->
+                    <div class="w-25 mt-3">
                       <label for="state" class="form-label">State</label>
                       <select class="form-select" id="state" required>
-                        <option selected disabled value="">Choose your State...</option>
+                        <option selected disabled value="">Choose...</option>
                         <option>...</option>
                       </select>
                       <div class="invalid-feedback">
                         Please select a valid state.
                       </div>
                     </div>
-                    <div class="col-md-6">
+
+                                                   <!-- L.G.A -->
+                    <div class="w-25 mt-3">
                         <label for="LGA" class="form-label">LGA</label>
                         <select class="form-select" id="LGA" required>
-                          <option selected disabled value="">Choose your LGA</option>
+                          <option selected disabled value="">Choose...</option>
                           <option>...</option>
                         </select>
                         <div class="invalid-feedback">
                           Please select a valid LGA.
                         </div>
                       </div>
-                    <div class="col-12">
-                      <button class="btn btn-primary" onclick="addCard()" type="submit">Submit form</button>
+
+                                                   <!-- Gender -->
+                  <div class="mt-3 w-25">
+                    Gender:
+                    <input type="radio" class="mx-3" name="gender" value="Male">Male
+                    <input type="radio" class="mx-3" name="gender" value="Female">Female
+
+                  </div>
+                                            <!-- Submit button -->
+                    <div class="w-25 mt-3">
+                      <button class="btn btn-primary" type="submit">Submit form</button>
                     </div>
+
+
                   </form>
             </div>
-        <div class="tab-pane fade d-flex flex-column flex-md-row flex-wrap justify-content-center align-items-center gap-5" id="pills-card" role="tabpanel" aria-labelledby="pills-card-tab">
-            <div class="card w-50">
-                <div class="card-body">
-                    <h5 class="card-title mb-3">Full Name:</h5>
-                    <h6 class="card-subtitle mb-3">Date Of Birth:</h6>
-                    <p class="card-text">State:</p>
-                    <p class="card-text">LGA:</p>
-                    <p class="card-text">Gender:</p>
-                </div>
+
+
+            <!-- Cards -->
+        <div class="tab-pane fade" id="pills-card" role="tabpanel" aria-labelledby="pills-card" data-tab-info>
+            <div class="d-flex flex-column flex-wrap flex-md-row flex-wrap justify-content-center align-items-center" id="container">
+                <!-- <div class="card w-50">
+                    <div class="card-body" id="Card">
+                        <h5 class="card-title mb-3">Full Name:</h5>
+                        <h6 class="card-subtitle mb-3">Date Of Birth:</h6>
+                        <p class="card-text">State:</p>
+                        <p class="card-text">LGA:</p>
+                        <p class="card-text">Gender:</p>
+                    </div>
+                </div> -->
             </div>
         </div>
         </div>
     </main>
+
+    <script src="./script/main.js"></script>
 </body>
 </html>
