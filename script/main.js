@@ -881,14 +881,15 @@ var cardTemplate =
 
     '    <div class="card w-50">'+
     '    <div class="card-body">'+
-    '      <h5 class="card-title">Full name: '+ firstName +' '+ lastName +'</h5>'+
+    '<h5 class="card-title">Full name: ' + firstName +' '+ lastName +'</h5>'+
     '      <p class="card-text">'+ dob +'</p>'+
-    '      <p class="card-text">State:'+ stat +'</p> '
-    '      <p class="card-text">LGA:'+ lga +'</p> '
+    '      <p class="card-text">State:'+ stat +'</p>'
+    '      <p class="card-text">LGA:'+ lga +'</p>'
     '    </div>'+
     '  </div>';
+document.getElementById("addForm").insertAdjacentElement("afterbegin", cardTemplate);
 
-document.getElementById("pills-card-tab").insertAdjacentHTML("afterbegin", cardTemplate);
+
 
 function adder(card){
     for(let i=0;i<card.length;i++){
