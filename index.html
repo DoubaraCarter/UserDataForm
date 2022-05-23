@@ -12,20 +12,19 @@
 </head>
 <body>
     <header class="container-fluid row">
-        <ul class="nav nav-pills mb-3 d-flex
-        justify-content-center" id="pills-tab" role="tablist">
+        <ul class="col-12 col-md-6 d-flex justify-content-end nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
-              <button class="nav-link" id="pills-form-tab" data-bs-toggle="pill" data-bs-target="#pills-form" type="button" role="tab" aria-controls="pills-form" aria-selected="true">Forms</button>
+              <button class="nav-link active" id="pills-form-tab" data-bs-toggle="pill" data-bs-target="#pills-form" type="button" role="tab" aria-controls="pills-form" aria-selected="true">Form</button>
             </li>
             <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="pills-card-tab" data-bs-toggle="pill" data-bs-target="#pills-card" type="button" role="tab" aria-controls="pills-card" aria-selected="false">Cards</button>
-            </li>
-          </ul>
+                <button class="nav-link" id="pills-card-tab" data-bs-toggle="pill" data-bs-target="#pills-card" type="button" role="tab" aria-controls="pills-card" aria-selected="false">Cards</button>
+              </li>
+        </ul>
     </header>
 
     <main>
         <div class="tabs-content pills-tabContent">
-            <div class="tab-pane fade show active d-flex flex-column flex-md-row flex-wrap justify-content-center align-items-center gap-5" id="pills-form" role="tabpanel" aria-labelledby="pills-form-tab">
+            <div class="tab-pane fade show active" id="pills-form" role="tabpanel" aria-labelledby="pills-form-tab">
                 <form class="container-fluid row g-3 needs-validation" novalidate>
                     <div class="col-md-6">
                       <label for="validationCustom01" class="form-label">First name</label>
@@ -75,19 +74,17 @@
                     </div>
                   </form>
             </div>
-        </div>
-        <div class="tabs-content pills-tabContent">
-            <div class="tab-pane fade show active d-flex flex-column flex-md-row flex-wrap justify-content-center align-items-center gap-5" id="pills-card" role="tabpanel" aria-labelledby="pills-card-tab">
-                <div class="card w-50">
-                    <div class="card-body">
-                      <h5 class="card-title mb-3">Full Name:</h5>
-                      <h6 class="card-subtitle mb-3">Date Of Birth:</h6>
-                      <p class="card-text">State:</p>
-                      <p class="card-text">LGA:</p>
-                      <p class="card-text">Gender:</p>
-                    </div>
+        <div class="tab-pane fade d-flex flex-column flex-md-row flex-wrap justify-content-center align-items-center gap-5" id="pills-card" role="tabpanel" aria-labelledby="pills-card-tab">
+            <div class="card w-50">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">Full Name:</h5>
+                    <h6 class="card-subtitle mb-3">Date Of Birth:</h6>
+                    <p class="card-text">State:</p>
+                    <p class="card-text">LGA:</p>
+                    <p class="card-text">Gender:</p>
                 </div>
             </div>
+        </div>
         </div>
     </main>
 </body>
